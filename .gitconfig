@@ -1,0 +1,58 @@
+[user]
+	email = ...
+	name = ...
+	signingkey = ...
+
+[core]
+	autocrlf = input
+	autolf = true
+	editor = vi
+
+[color]
+	ui = auto
+	diff = auto
+	status = auto
+	branch = auto
+
+[branch]
+	sort = refname
+
+[commit]
+	verbose = true
+	gpgSign = true
+
+[diff]
+	mnemonicPrefix = true
+
+[fetch]
+	# Delete locally remote branch that have been deleted
+	prune = true
+
+[grep]
+	lineNumber = true
+
+[log]
+	abbrevCommit = true
+	date = relative
+	decorate = auto
+
+[push]
+	default = upstream
+
+[status]
+	showUntrackedFiles = all
+	showStash = true
+
+[alias]
+	a = add -v
+	b = branch -vv
+	c = commit -v
+	dlc = diff HEAD~ HEAD
+	dlcn = diff HEAD~ HEAD --name-only
+	ch = checkout
+	uncommit = reset --soft HEAD~1
+	l = log --graph --date=relative --decorate=short --pretty=tformat:'%C(yellow)%h%C(reset)%C(auto)%d%C(reset) %<|(150,trunc)%s %C(blue)%<(25,trunc)%an%C(reset)  %C(green) (%ad)%C(reset)'
+	lb = l --no-merges master..
+	s = status
+	ss = stash show -p
+	suno = status --untracked-files=no
